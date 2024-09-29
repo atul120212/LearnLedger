@@ -1,0 +1,91 @@
+<!-- templates/view_pdf_list.html -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PDF List</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .pdf-list {
+            max-width: 800px;
+            margin: 0 auto;
+            background: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .pdf-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 0;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .pdf-item:last-child {
+            border-bottom: none;
+        }
+
+        .pdf-title {
+            margin: 0;
+            font-size: 18px;
+        }
+
+        .pdf-link {
+            text-decoration: none;
+            color: #007bff;
+            font-size: 16px;
+        }
+
+        .pdf-link:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Available PDFs</h1>
+    <div class="pdf-list">
+        {% for pdf in pdfs %}
+        <div class="pdf-item">
+            <p class="pdf-title">mynote0</p>
+            <a class="pdf-link" href="{% url 'view_pdf' pdf.id %}">View PDF</a>
+        </div>
+        {% endfor %}
+        {% for pdf in pdfs %}
+        <div class="pdf-item">
+            <p class="pdf-title">mynote1</p>
+            <a class="pdf-link" href="{% url 'view_pdf' pdf.id %}">View PDF</a>
+        </div>
+        {% endfor %}
+        {% for pdf in pdfs %}
+        <div class="pdf-item">
+            <p class="pdf-title">myproject0</p>
+            <a class="pdf-link" href="{% url 'view_pdf' pdf.id %}">View PDF</a>
+        </div>
+        {% endfor %}
+        {% for pdf in pdfs %}
+        <div class="pdf-item">
+            <p class="pdf-title">mynote3</p>
+            <a class="pdf-link" href="{% url 'view_pdf' pdf.id %}">View PDF</a>
+        </div>
+        {% endfor %}
+        {% for pdf in pdfs %}
+        <div class="pdf-item">
+            <p class="pdf-title">myproject2</p>
+            <a class="pdf-link" href="{% url 'view_pdf' pdf.id %}">View PDF</a>
+        </div>
+        {% endfor %}
+    </div>
+</body>
+
+</html>

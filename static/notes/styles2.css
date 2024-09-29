@@ -1,0 +1,17 @@
+/* styles.css */
+body {
+    background-color: #f8f9fa; /* Light background for better contrast */
+}
+
+.bg-gradient {
+    background: linear-gradient(to right, #4caf50, #2196f3); /* Green to Blue gradient */
+}
+
+.card {
+    border-radius: 10px; /* Rounded corners for card */
+    transition: transform 0.3s;
+}
+
+.card:hover {
+    transform: scale(1.02); /* Slight zoom effect on hover */
+}

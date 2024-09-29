@@ -1,0 +1,81 @@
+<!-- templates/index.html -->
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LearnLedger</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{% static 'notes/styles.css' %}"> <!-- Custom CSS -->
+</head>
+
+<body>
+    <header class="bg-gradient text-white text-center py-4">
+        <h1>Welcome to the LearnLedger</h1>
+        <p>Your go-to platform for buying and selling notes and projects!</p>
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <div class="container">
+                <a class="navbar-brand" href="#">Marketplace</a>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'mint_note_form' %}">Mint a New Note</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#about">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#marketplace">Marketplace</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container my-5">
+        <h2 class="text-center mb-4">Explore Our Marketplace</h2>
+        <div class="row">
+            <div class="col-md-4 mb-4">
+                <div class="card shadow border-success">
+                    <div class="card-body">
+                        <h5 class="card-title">Featured Note</h5>
+                        <p class="card-text">Discover amazing notes that can help you excel in your studies.</p>
+                        <a href="{% url 'mint_note' %}" class="btn btn-success">Mint Now</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card shadow border-primary">
+                    <div class="card-body">
+                        <h5 class="card-title">Best Selling Notes</h5>
+                        <p class="card-text">Check out the most popular notes available in our marketplace.</p>
+                        <a href="{% url 'mint_note' %}" class="btn btn-primary">Mint Now</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card shadow border-info">
+                    <div class="card-body">
+                        <h5 class="card-title">Top Projects</h5>
+                        <p class="card-text">Explore top-rated projects shared by other users.</p>
+                        <a href="{% url 'mint_note' %}" class="btn btn-info">Mint Now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-dark text-white text-center py-4">
+        <p>&copy; 2024 Notes Marketplace. All rights reserved.</p>
+        <p><a class="text-white" href="#about">About Us</a></p>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>

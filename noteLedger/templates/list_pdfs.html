@@ -1,0 +1,63 @@
+<!-- templates/list_pdfs.html -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Available PDFs</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f7f7f7;
+            padding: 20px;
+        }
+
+        .pdf-container {
+            margin-top: 20px;
+        }
+
+        .pdf-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: #ffffff;
+            padding: 15px;
+            margin-bottom: 10px;
+            border-radius: 8px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .pdf-item a {
+            text-decoration: none;
+            color: #007bff;
+            font-weight: bold;
+        }
+
+        .pdf-title {
+            margin: 0;
+            font-size: 18px;
+            color: #333;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Available PDFs</h1>
+    <div class="pdf-container">
+        {% if pdfs %}
+        {% for pdf in pdfs %}
+        <div class="pdf-item">
+            <p class="pdf-title">{{ pdf.title }}</p>
+            <a href="{% url 'view_pdf' pdf.id %}">View PDF</a>
+        </div>
+        {% endfor %}
+        {% else %}
+        <div class="pdf-item">
+            <p class="pdf-title">No PDFs available.</p>
+        </div>
+        {% endif %}
+    </div>
+</body>
+
+</html>
